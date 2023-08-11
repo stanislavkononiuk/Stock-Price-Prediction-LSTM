@@ -86,10 +86,7 @@ trainPredictPlot = np.empty_like(OHLC_avg)
 trainPredictPlot[:, :] = np.nan
 trainPredictPlot[step_size:len(trainPredict)+step_size, :] = trainPredict
 
-# CREATING SIMILAR DATASSET TO PLOT TEST PREDICTIONS
-testPredictPlot = np.empty_like(OHLC_avg)
-testPredictPlot[:, :] = np.nan
-testPredictPlot[len(trainPredict)+(step_size*2)+1:len(OHLC_avg)-1, :] = testPredict
+
 
 # DE-NORMALIZING MAIN DATASET 
 OHLC_avg = scaler.inverse_transform(OHLC_avg)
