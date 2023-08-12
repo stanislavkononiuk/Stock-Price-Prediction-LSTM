@@ -32,10 +32,6 @@ plt.plot(obs, close_val, 'g', label = 'Closing price')
 plt.legend(loc = 'upper right')
 plt.show()
 
-# PREPARATION OF TIME SERIES DATASE
-OHLC_avg = np.reshape(OHLC_avg.values, (len(OHLC_avg),1)) # 1664
-scaler = MinMaxScaler(feature_range=(0, 1))
-OHLC_avg = scaler.fit_transform(OHLC_avg)
 
 # TRAIN-TEST SPLIT
 train_OHLC = int(len(OHLC_avg) * 0.75)
