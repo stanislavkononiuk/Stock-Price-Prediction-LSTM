@@ -46,7 +46,10 @@ train_OHLC, test_OHLC = OHLC_avg[0:train_OHLC,:], OHLC_avg[train_OHLC:len(OHLC_a
 trainX, trainY = preprocessing.new_dataset(train_OHLC, 1)
 testX, testY = preprocessing.new_dataset(test_OHLC, 1)
 
-
+# RESHAPING TRAIN AND TEST DATA
+trainX = np.reshape(trainX, (trainX.shape[0], 1, trainX.shape[1]))
+testX = np.reshape(testX, (testX.shape[0], 1, testX.shape[1]))
+step_size = 1
 
 # LSTM MODEL
 model = Sequential()
